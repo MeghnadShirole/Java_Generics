@@ -53,18 +53,18 @@ public class FindMaxTest {
     @Test
     public void givenFirstStringAsLarge_ShouldReturn_FirstStringAsMax() {
         String max = findMax.findMaxValue("350", "110", "215");
-        Assert.assertEquals((String)"350", max);
+        Assert.assertEquals("350", max);
     }
 
     @Test
     public void givenSecondStringAsLarge_ShouldReturn_ThirdStringAsMax() {
         String max = findMax.findMaxValue("350", "450", "215");
-        Assert.assertEquals((String)"450", max);
+        Assert.assertEquals("450", max);
     }
 
     @Test
     public void givenThirdStringAsLarge_ShouldReturn_ThirdStringAsMax() {
         String max = findMax.findMaxValue("350", "110", "400");
-        Assert.assertEquals((String)"400", max);
+        Assert.assertEquals("400", max);
     }
 }
