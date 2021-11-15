@@ -1,34 +1,40 @@
 package com.company;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
-    public class FindMax<E extends Comparable<E>> {
-        E[] values;
+/*
+ * Generic Class To Find Max Values
+ */
+public class FindMax<E extends Comparable<E>> {
+    //Array of Generic values
+    E[] values;
+    //List of Generic Values
+    List<E> listValues = new LinkedList<>();
 
-        public FindMax(E[] values) {
-            this.values = values;
-        }
+    //Constructor to Initialize Generic Array
+    public FindMax(E[] values) {
+        this.values = values;
+    }
 
-        public static <E> void printMax(E max) {
-            System.out.println("Max Value = " + max);
-        }
+    //Constructor to Initialize Generic List
+    public FindMax(List<E> listValues) {
+        this.listValues = listValues;
+    }
 
-        public static void main(String[] args) {
-            Integer[] integerValues = {50, 20, 300};
-            String[] stringValues = {"All", "Good", "Morning"};
-            new FindMax<String>(stringValues).findMaxValue();
-            new FindMax<Integer>(integerValues).findMaxValue();
-        }
+    //Method to Find  Max Value From List
+    public E findMax() {
+        return Collections.max(listValues);
+    }
 
-        public E findMaxValue() {
-            if (values[0].compareTo(values[1]) > 0 && values[0].compareTo(values[2]) > 0) {
-                printMax(values[0]);
-                return values[0];
-            } else if (values[1].compareTo(values[0]) > 0 && values[1].compareTo(values[2]) > 0) {
-                printMax(values[1]);
-                return values[1];
-            } else {
-                printMax(values[2]);
-                return values[2];
-            }
+    //Method to Find Max Value Form Array
+    public E findMaxValue() {
+        if (values[0].compareTo(values[1]) > 0 && values[0].compareTo(values[2]) > 0) {
+            return values[0];
+        } else if (values[1].compareTo(values[0]) > 0 && values[1].compareTo(values[2]) > 0) {
+            return values[1];
+        } else {
+            return values[2];
         }
     }
 }
